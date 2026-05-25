@@ -1,4 +1,5 @@
 import { useLang } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
 
 export const OtherGamesSection = () => {
   const { t } = useLang();
@@ -18,14 +19,19 @@ export const OtherGamesSection = () => {
           <div className="text-emerald-600">{t("cta.i3")}</div>
         </div>
 
-        <a
+        <motion.a
           href="https://xdeyvidhx.itch.io/lowbattery"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block relative bg-emerald-400 text-zinc-900 text-sm md:text-base font-bold uppercase tracking-[0.25em] px-12 py-5 border-2 border-neutral-900 shadow-[rgb(17,17,17)_8px_8px_0px_0px] hover:shadow-[rgb(17,17,17)_4px_4px_0px_0px] transition-shadow"
+          whileHover={{ 
+            backgroundColor: "rgb(52, 211, 153)", // emerald-400
+            color: "rgb(24, 24, 27)", // zinc-900
+          }}
+          transition={{ duration: 0.2 }}
+          className="inline-block relative bg-transparent text-emerald-600 text-sm md:text-base font-bold uppercase tracking-[0.25em] px-12 py-5 border-2 border-emerald-600 cursor-pointer transition-colors"
         >
           {t("cta.play")}
-        </a>
+        </motion.a>
 
         <p className="text-zinc-500 text-xs italic tracking-wider mt-8">
           {t("cta.devices")}

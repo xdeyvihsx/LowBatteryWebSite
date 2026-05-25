@@ -1,5 +1,6 @@
 import vector1 from "@/assets/vector-1.svg";
 import { useLang } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
 
 export const PurchaseSection = () => {
   const { t } = useLang();
@@ -37,14 +38,19 @@ export const PurchaseSection = () => {
           ))}
         </div>
 
-        <a
+        <motion.a
           href="https://xdeyvidhx.itch.io/lowbattery"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-emerald-400 text-neutral-900 text-sm font-bold uppercase tracking-[0.25em] px-12 py-5 border-2 border-emerald-400 shadow-[rgb(125,211,252)_6px_6px_0px_0px] hover:shadow-[rgb(125,211,252)_3px_3px_0px_0px] transition-shadow"
+          whileHover={{ 
+            backgroundColor: "rgb(52, 211, 153)", // emerald-400
+            color: "rgb(17, 24, 39)", // neutral-900
+          }}
+          transition={{ duration: 0.2 }}
+          className="inline-block bg-transparent text-emerald-400 text-sm font-bold uppercase tracking-[0.25em] px-12 py-5 border-2 border-emerald-400 cursor-pointer transition-colors"
         >
           {t("demo.play")}
-        </a>
+        </motion.a>
         <p className="text-neutral-400 text-xs italic mt-6 tracking-wider">
           {t("demo.headphones")}
         </p>
