@@ -13,14 +13,14 @@ export const MainContent = () => {
     <div className="box-border caret-transparent">
       <div className="box-border caret-transparent">
         <main className="bg-black box-border caret-transparent overflow-hidden font-proximanova_regular">
-          <HeroSection />
-          <StorySection />
-          <FeaturesSection />
-          <PurchaseSection />
-          <ChampionsSection />
-          <GallerySection />
+          <section id="inicio"><HeroSection /></section>
+          <section id="historia"><StorySection /></section>
+          <section id="caracteristicas"><FeaturesSection /></section>
+          <section id="demo"><PurchaseSection /></section>
+          <section id="personaje"><ChampionsSection /></section>
+          <section id="galeria"><GallerySection /></section>
           <NewsletterSection />
-          <StudioSection />
+          <section id="equipo"><StudioSection /></section>
           <OtherGamesSection />
         </main>
       </div>

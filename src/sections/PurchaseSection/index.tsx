@@ -1,21 +1,51 @@
-import { EditionTabs } from "@/sections/PurchaseSection/components/EditionTabs";
 import vector1 from "@/assets/vector-1.svg";
+
+const controls = [
+  { key: "Barra espaciadora", action: "Saltar" },
+  { key: "Doble salto", action: "Disponible en niveles avanzados" },
+  { key: "Power-ups", action: "Recógelos para recuperar energía" },
+];
 
 export const PurchaseSection = () => {
   return (
-    <section className="relative text-white bg-[#111111] box-border caret-transparent py-16 md:py-24 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 text-center">
-        <div className="flex justify-center mb-4">
-          <img
-            src="https://c.animaapp.com/mpg2qp8c7c29yt/assets/icon-12.svg"
-            alt=""
-            className="h-10 w-auto"
-          />
-        </div>
-        <h2 className="font-trajan text-emerald-400 text-2xl md:text-4xl uppercase tracking-[0.15em] mb-10">
-          Ya Disponible
+    <section className="relative text-white bg-[#111111] box-border caret-transparent py-20 md:py-28 overflow-hidden">
+      <div className="relative max-w-[1100px] mx-auto px-6 text-center z-10">
+        <p className="text-emerald-400 text-xs uppercase tracking-[0.3em] font-bold mb-4">
+          09 · Demo Jugable
+        </p>
+        <h2 className="font-trajan text-white text-3xl md:text-5xl uppercase tracking-[0.1em] mb-4">
+          ¿Cuánto puedes durar?
         </h2>
-        <EditionTabs />
+        <p className="text-neutral-300 text-sm md:text-base max-w-2xl mx-auto mb-12 leading-relaxed">
+          Pon a prueba tus reflejos, administra tu batería y descubre si eres
+          capaz de llegar al cargador antes del apagón final.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12">
+          {controls.map((c) => (
+            <div
+              key={c.key}
+              className="border border-emerald-400/40 bg-emerald-400/5 p-6 text-left"
+            >
+              <div className="text-emerald-400 text-xs uppercase tracking-[0.2em] font-bold mb-2">
+                {c.key}
+              </div>
+              <div className="text-white text-sm">{c.action}</div>
+            </div>
+          ))}
+        </div>
+
+        <a
+          href="https://xdeyvidhx.itch.io/lowbattery"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-emerald-400 text-neutral-900 text-sm font-bold uppercase tracking-[0.25em] px-12 py-5 border-2 border-emerald-400 shadow-[rgb(125,211,252)_6px_6px_0px_0px] hover:shadow-[rgb(125,211,252)_3px_3px_0px_0px] transition-shadow"
+        >
+          Jugar Demo
+        </a>
+        <p className="text-neutral-400 text-xs italic mt-6 tracking-wider">
+          Recomendado jugar con audífonos.
+        </p>
       </div>
       <img
         src={vector1}
