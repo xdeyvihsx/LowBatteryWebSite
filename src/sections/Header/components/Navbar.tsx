@@ -4,9 +4,9 @@ import { HeaderActions } from "@/sections/Header/components/HeaderActions";
 
 export const Navbar = () => {
   return (
-    <div className="relative text-sm font-bold bg-neutral-900 border-b-zinc-800/30 box-border caret-transparent flex h-20 leading-[normal] text-left w-full z-[3000000] border-b-2">
+    <div className="relative text-sm font-bold flex h-20 leading-[normal] text-left w-full items-center">
       <NavbarLogo />
-      <div className="items-center box-border caret-transparent flex basis-[0%] grow justify-start min-h-[auto] min-w-[auto] ml-2 md:ml-0">
+      <div className="flex basis-[0%] grow justify-start min-h-auto min-w-auto ml-2 md:ml-0">
         <DesktopNav />
       </div>
       <HeaderActions />

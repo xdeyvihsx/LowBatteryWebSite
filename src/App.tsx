@@ -8,7 +8,7 @@ export default function App() {
       <MainContent />
       <Header />
       <Footer />
-      <div className="fixed box-border caret-transparent text-center w-full z-[1000] left-0 bottom-0"></div>
+      <div className="fixed box-border caret-transparent text-center w-full z-1000 left-0 bottom-0"></div>
     </div>
   );
 }

@@ -4,61 +4,64 @@ import gameplayImg from "@/assets/gameplay.png";
 import conceptArtImg from "@/assets/consectart.png";
 import audiovisualImg from "@/assets/audiovisual.png";
 import powerupsImg from "@/assets/powersups.png";
-
-const items = [
-  { 
-    tag: "Gameplay", 
-    title: "En acción", 
-    desc: "Captura del recorrido y mecánicas en tiempo real.",
-    src: gameplayImg
-  },
-  { 
-    tag: "Concept Art", 
-    title: "Visión inicial", 
-    desc: "Bocetos y referencias del universo Low Battery.",
-    src: conceptArtImg
-  },
-  { 
-    tag: "Power-ups", 
-    title: "Objetos clave", 
-    desc: "Diseños de los recursos que te mantienen encendido.",
-    src: powerupsImg
-  },
-  { 
-    tag: "HUD", 
-    title: "Interfaz mínima", 
-    desc: "Indicadores claros sin saturar la pantalla.",
-    src: hudImg,
-    contain: true
-  },
-  { 
-    tag: "Sistema audiovisual", 
-    title: "Sonido y feedback", 
-    desc: "Capas de sonido que amplifican la tensión.",
-    src: audiovisualImg
-  },
-  { 
-    tag: "Animaciones", 
-    title: "Desarrollo visual", 
-    desc: "Evolución de los movimientos del personaje.",
-    video: animacionesVid
-  },
-];
+import { useLang } from "@/contexts/LanguageContext";
 
 export const GallerySection = () => {
+  const { t } = useLang();
+
+  const items = [
+    { 
+      tag: t("gallery.i1.tag"), 
+      title: t("gallery.i1.title"), 
+      desc: t("gallery.i1.desc"),
+      src: gameplayImg
+    },
+    { 
+      tag: t("gallery.i2.tag"), 
+      title: t("gallery.i2.title"), 
+      desc: t("gallery.i2.desc"),
+      src: conceptArtImg
+    },
+    { 
+      tag: t("gallery.i3.tag"), 
+      title: t("gallery.i3.title"), 
+      desc: t("gallery.i3.desc"),
+      src: powerupsImg
+    },
+    { 
+      tag: t("gallery.i4.tag"), 
+      title: t("gallery.i4.title"), 
+      desc: t("gallery.i4.desc"),
+      src: hudImg,
+      contain: true
+    },
+    { 
+      tag: t("gallery.i5.tag"), 
+      title: t("gallery.i5.title"), 
+      desc: t("gallery.i5.desc"),
+      src: audiovisualImg
+    },
+    { 
+      tag: t("gallery.i6.tag"), 
+      title: t("gallery.i6.title"), 
+      desc: t("gallery.i6.desc"),
+      video: animacionesVid
+    },
+  ];
+
   return (
     <section className="relative bg-[#F1F2F1] box-border caret-transparent py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="flex items-baseline justify-between mb-2">
           <h2 className="font-trajan text-neutral-900 text-2xl md:text-4xl uppercase tracking-[0.1em]">
-            Galería
+            {t("gallery.title")}
           </h2>
           <span className="text-neutral-500 text-xs uppercase tracking-widest">
-            06 · Multimedia
+            {t("gallery.eyebrow")}
           </span>
         </div>
         <p className="font-trajan text-neutral-600 italic mb-10">
-          Explora el universo de Low Battery.
+          {t("gallery.tagline")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -104,7 +107,7 @@ export const GallerySection = () => {
         </div>
 
         <p className="font-trajan text-neutral-500 italic text-center mt-10">
-          "Cada versión acercó más al juego final."
+          {t("gallery.quote")}
         </p>
       </div>
     </section>

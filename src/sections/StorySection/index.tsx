@@ -1,23 +1,26 @@
 import loreCharacter from "@/assets/lore-character.png";
-
-const experiencia = [
-  "Movimiento automático",
-  "Saltos y doble salto",
-  "Gestión de batería en tiempo real",
-  "Obstáculos dinámicos",
-  "Retroalimentación visual y sonora",
-  "Sistema estratégico de power-ups",
-];
+import { useLang } from "@/contexts/LanguageContext";
 
 export const StorySection = () => {
+  const { t } = useLang();
+  
+  const experiencia = [
+    t("story.exp.1"),
+    t("story.exp.2"),
+    t("story.exp.3"),
+    t("story.exp.4"),
+    t("story.exp.5"),
+    t("story.exp.6"),
+  ];
+
   return (
     <section className="relative bg-[#111111] box-border caret-transparent py-16 md:py-24">
-      <div className="max-w-[1280px] mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <h2 className="font-trajan text-white text-3xl md:text-5xl text-center uppercase tracking-[0.08em] mb-4">
-          About Low Battery
+          {t("story.title")}
         </h2>
         <p className="font-trajan text-sky-300 text-center italic tracking-wider mb-14">
-          "Cada salto consume energía. Cada decisión importa."
+          {t("story.tagline")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -31,22 +34,17 @@ export const StorySection = () => {
 
           <div className="text-neutral-200">
             <h3 className="font-trajan text-emerald-400 text-2xl uppercase tracking-[0.1em] mb-4">
-              ¿Qué es Low Battery?
+              {t("story.whatIs")}
             </h3>
             <p className="text-sm md:text-base leading-relaxed mb-4 text-neutral-300">
-              Low Battery es un videojuego <strong>auto-runner 2D</strong> donde
-              controlas un pequeño celular atrapado en una carrera constante
-              contra el tiempo… y contra su propia batería.
+              {t("story.desc1")}
             </p>
             <p className="text-sm md:text-base leading-relaxed mb-6 text-neutral-400">
-              Tu misión parece simple: <strong className="text-white">sobrevivir</strong>.
-              Pero entre notificaciones hostiles, obstáculos absurdos y un
-              entorno cada vez más caótico, mantenerte encendido no será tan
-              fácil.
+              {t("story.desc2")}
             </p>
 
             <h4 className="font-trajan text-white text-sm uppercase tracking-[0.2em] mb-3">
-              Experiencia de juego
+              {t("story.experience")}
             </h4>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
               {experiencia.map((item) => (
@@ -62,7 +60,7 @@ export const StorySection = () => {
 
             <div className="inline-block border border-emerald-400/40 bg-emerald-400/5 px-4 py-2">
               <span className="text-emerald-400 text-xs uppercase tracking-[0.2em] font-bold">
-                Disponible en
+                {t("story.availableOn")}
               </span>
               <span className="text-white text-sm ml-3">WebGL & PC</span>
             </div>

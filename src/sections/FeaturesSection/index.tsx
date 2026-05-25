@@ -1,41 +1,44 @@
 import bottomShape from "@/assets/hero-bottom-shape.png";
 import gameplayImg from "@/assets/gameplay.png";
 import audiovisualImg from "@/assets/audiovisual.png";
-
-const features = [
-  {
-    n: "01",
-    title: "Vista Tutorial",
-    desc: "Aprende los controles básicos y familiarízate con el ritmo del juego. Una intro pensada para que sepas exactamente cómo sobrevivir antes del apagón.",
-    video: "/videos/tutorial.mov",
-    fallback: gameplayImg
-  },
-  {
-    n: "02",
-    title: "Daño y Notificaciones",
-    desc: "Las notificaciones aparecen sin aviso y los objetos más simples se convierten en amenazas. Cada choque drena tu batería más rápido.",
-    video: "/videos/dano-notificaciones.mov",
-    fallback: gameplayImg
-  },
-  {
-    n: "03",
-    title: "Sonido y Feedback",
-    desc: "Una capa sonora pensada para amplificar la tensión: cada efecto te avisa de un peligro, un power-up o el siguiente segundo perdido.",
-    video: "/videos/sound-notifications.mov",
-    fallback: audiovisualImg
-  },
-];
+import { useLang } from "@/contexts/LanguageContext";
 
 export const FeaturesSection = () => {
+  const { t } = useLang();
+
+  const features = [
+    {
+      n: "01",
+      title: t("features.f1.title"),
+      desc: t("features.f1.desc"),
+      video: "/videos/tutorial.mov",
+      fallback: gameplayImg
+    },
+    {
+      n: "02",
+      title: t("features.f2.title"),
+      desc: t("features.f2.desc"),
+      video: "/videos/dano-notificaciones.mov",
+      fallback: gameplayImg
+    },
+    {
+      n: "03",
+      title: t("features.f3.title"),
+      desc: t("features.f3.desc"),
+      video: "/videos/sound-notifications.mov",
+      fallback: audiovisualImg
+    },
+  ];
+
   return (
     <div className="relative bg-neutral-900 box-border caret-transparent">
       <div className="bg-fixed bg-[url('https://www.ruinedking.com/static/backgroundFeatures-c8276c606229899791593d05da9c5990.jpg')] bg-no-repeat bg-cover caret-transparent w-full z-[1] pb-[69.375px] md:pb-[236.8px] pt-16 md:pt-24">
         <div className="max-w-[1440px] mx-auto px-6 text-center mb-12">
           <div className="text-emerald-400 text-[28px] uppercase font-trajan tracking-[0.1em] md:text-[56px] md:leading-[56px] mb-4">
-            Funciones de Juego
+            {t("features.title")}
           </div>
           <p className="font-trajan text-sky-300 italic tracking-wider">
-            "Tu peor enemigo no es el entorno… es el tiempo."
+            {t("features.tagline")}
           </p>
         </div>
 
